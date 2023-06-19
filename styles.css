@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+/* Root CSS Variable */
+
+:root:not(.light) {
+--bg-color1 : #292929;
+--bg-color2 : #1C1C1C;
+--color1 : #fff;
+--color2 : #888888;
+}
+
+
+/* CSS Globals */
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+text-decoration: none;
+outline: none;
+}
+
+li {
+list-style: none;
+}
+
+h1,
+h2{
+font-family: 'poppins' sans-serif;
+color: var(--color1);
+font-size: 4rem;
+font-weight: 700;
+}
+
+h3 {
+color: var(--color1);
+font-family: 'poppins', sans-serif;
+font-size: 1.5rem;
+font-weight: 500;
+}
+
+/* Portfolio Wrapper */
+
+.portfolio-container {
+max-width: 1140px;
+margin: 0 auto;
+padding: 0 15px;
+
+}
+
+.portfolio-row {
+display: flex;
+flex-wrap: wrap;
+}
+
+/*Style for navigation */
+
+header{
+position: absolute;
+padding: 0 15px;
+left: 0;
+right: 0;
+z-index: 11;
+transition: .8s;
+background-color: var(--bg-color1);
+}
+
+header .portfolio-row.header-wrap {
+justify-content: space-between;
+align-items: center;
+}
+
+.brand-name a{
+font-size: 1.5rem;
+font-weight: 500;
+color: var(--color1);
+font-family: 'poppins', sans-serif;
+}
+
+.hamburger i{
+font-size: 20px;
+background-color: rgb(236, 241, 250);
+color: #01143e;
+display: none;
+height: 30px;
+width: 35px;
+line-height: 30px;
+text-align: center;
+cursor: pointer;
+border: 1px solid #EEE;
+}
+
+.portfolio-navbar ul {
+list-style: none;
+margin: 0;
+}
+
+.portfolio-navbar ul li{
+display: inline;
+margin-left: 35px;
+
+}
+
+.portfolio-navbar ul li a {
+  line-height: 72px;
+  color: var(--color1);
+  font-weight: 600;
+  position: relative;
+  font-family: 'poppins', sans-serif;
+  text-transform: uppercase;
+  transform: .8s;
+}
+
+/*Style for slider */
+
+header{
+position: relative;
+padding: 150px 0 50px 0;
+background-color: var(--bg-color1);
+}
+
+.slider-content {
+align-items: center !important;
+display: flex;
+flex-wrap: wrap;
+}
+
+.slider-general{
+flex: 0 0 auto;
+width:60%;
+}
+
+/*slider Left Content */
+
+.slider-general .welcome-msg {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color1);
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin-bottom: 40px; /* Increase the margin-bottom value for larger space */
+  text-transform: uppercase;
+}
+
+.welcome-text h1 {
+  display: inline;
+  font-size: 21px;
+  margin-bottom: 60px;
+  line-height: 1.5;
+  padding: 5px 10px;
+}
+
+.slider-general p {
+  line-height: 15px;
+  padding-right: 26%;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color1);
+}
+
+/*text Hover Effect for Portfolio */
+
+.text-wrap {
+position: relative;
+display: inline-flex;
+overflow: hidden;
+cursor: pointer;
+}
+
+.main-title {
+-webkit-text-stroke: 1px var(--color1);
+-webkit-text-fill-color: transparent;
+font-size: 35px;
+}
+
+.main-title, .hover-title{
+transition: .5s cubic-bezier(0.51, 0.57, 0.17, 1);
+}
+
+.hover-title{
+color: var(--color1);
+position: absolute;
+transform: translate3d(0, 100, 0);
+}
+
+.text-wrap:hover .main-title {
+transform: translate3d(0, -100, 0);
+transition-delay: 0.1s;
+}
+
+.text-wrap:hover .hover-title {
+transform: translate3d(0, 0, 0);
+}
+
+/* Download CV Button */
+
+.download-resume a {
+display: inline-block;
+margin-top: 15px;
+padding: 15px 30px;
+transition: ease all 0.35s;
+color: var(--color1);
+font-family: 'poppins',sans-serif;
+background-color: #ff5252;
+position: relative;
+z-index: 1001;
+text-transform: uppercase;
+line-height: 30px;
+}
+
+.download-resume a::before {
+background-color: #44F;
+}
+
+.download-resume a::before {
+top: 0;
+width: 0;
+left: auto;
+right: 0;
+z-index: -1;
+bottom: 0;
+content: "";
+position: absolute;
+transition: all 0.3s ease-in-out;
+}
+
+.download-resume a:hover::before {
+left: 0;
+width: 100%;
+right: auto;
+}
+
+/*style for Slider Image */
+
+.slider-image {
+flex: 0 0 auto;
+width: 40%;
+}
+
+.welcome-image img{
+max-height: 500px;
+width: 100%;
+object-fit: cover;
+vertical-align: middle;
+}
+
+.slider-image .welcome-image {
+position: relative;
+z-index: 2;
+transition-duration: 0.4s;
+}
+
+.slider-image .welcome-image::before{
+content: "";
+width: calc(50% + 10px);
+height: calc(50% + 10px);
+right: -10px;
+bottom: -10px;
+position: absolute;
+z-index: -1;
+transition: all 0.7s;
+background: linear-gradient(to right, #12c2e9, #12c2e9, #f64f59);
+}
+
+.welcome-image:hover::before{
+width: 100%;
+height: 100%;
+opacity: 1;
+}
+
+.welcome-image:hover{
+transform: translate(-10.5px);
+}
+
+/* Footer Contact */
+
+#contact{
+background-color: var(--bg-color1);
+padding: 100px 0;
+text-align: center;
+}
+
+.contact-info{
+margin: 30px 0;
+color: hsl(337, 91%, 58%);
+}
+
+.contact-info span,
+.contact info a {
+color: var(--bg-color2)
+font-width: 600;
+font-family: 'poppins',sans-serif;
+}
+
+.contact-info h3{
+color: var(--color2);
+transition: all 0.3s ease-out 0s;
+cursor: pointer;
+font-size: 18px;
+}
+
+.social-link li {
+display: inline-block;
+margin: 5px 10px;
+}
+
+.social-link li a{
+color: var(--color2);
+font-family: 'poppins', sans-serif;
+transition: all 0.3s ease-out 0s;
+}
+
+.contact-info h3:hover,
+.social-link li a:hover {
+color: var(--color1);
+}
+
+/* responsive */
+
+@media screen and (max-width: 700px) {
+h1,
+h2 {
+font-size: 3rem;
+
+/* Header responsive */
+
+header {
+    padding: 15px;
+    position: fixed;
+    background-color: rgb(236, 241, 250);
+    barder-bottom: 1px solid;
+}
+
+border-name .logo{
+    color:#01143e
+}
+
+.hamburger i {
+    display: inlink-block;
+}
+}
+
+.portfolio-navbar{
+position:absolute;
+background-color: rgb(236, 241, 250);
+width: 100%;
+left: 0px;
+top: 60px;
+border-top: 1 px solid #EEE;
+border-bottom: 1px solid #EEE;
+display: none;
+}
+.portfolio-navbar.show {
+display: block;
+}
+
+.portfolio-navbar ul li {
+display: block;
+margin-left: 0;
+text-align: center;
+}
+
+.portfolio-navbar ul li a {
+line-height: 42px;
+color: #01143e
+}
+
+.portfolio-navbar ul li a::before {
+bottom: -3px;
+background-color: #01143e;
+}
+
+/*Slider Responsive */
+
+.slider-content {
+margin: 0 -15px;
+padding: 0 30px;
+}
+
+/* Slider Responsive */
+
+.slider-image {
+margin: 100%;
+order: 1;
+}
+
+.slider-general {
+margin-top: 3rem;
+width: 100%
+order: 2;
+}
+}
+
+/* Root CSS Variable */
+
+:root:not(.light) {
+    --bg-color1: #292929;
+    --bg-color2: #1C1C1C;
+    --color1: #fcf8f9;
+    --color2: #d80e5c;
+  }
+  
+  /* Portfolio Wrapper */
+  
+  .portfolio-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .portfolio-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /*Style for navigation */
+  
+  header {
+    position: absolute;
+    padding: 0 15px;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    transition: .8s;
+    background-color: var(--bg-color1);
+  }
+  
+  header .portfolio-row.header-wrap {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand-name a {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--color1);
+    font-family: 'poppins', sans-serif;
+  }
+  
+  .hamburger i {
+    font-size: 20px;
+    background-color: rgb(236, 241, 250);
+    color: #01143e;
+    display: none;
+    height: 30px;
+    width: 35px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #EEE;
+  }
+  
+  .portfolio-navbar ul {
+    font-weight: 500;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+  }
+  
+  .portfolio-navbar ul li {
+    display: inline;
+    margin-left: 35px;
+    transition: 0.3s;
+  }
+  
+  .portfolio-navbar ul li a {
+    font-size: 1rem;
+    line-height: 72px;
+    color: #d80e5c;
+    font-weight: 600;
+    position: relative;
+    font-family: 'poppins', sans-serif;
+    text-transform: uppercase;
+    transform: .8s;
+  }
+  
+  /*Style for slider */
+  
+  header {
+    position: relative;
+    justify-content: space-between;
+    padding: 20px 10%;
+    top: 0;
+    left: 0;
+    background: #01143e;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .slider-content {
+    align-items: center !important;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .slider-general {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+  
+  /*slider Left Content */
+  
+  .slider-general .welcome-msg {
+    font-family: 'poppins', sans-serif;
+    color: var(--color1);
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .welcome-text h1 {
+    display: inline;
+    font-size: medium;
+  }
+  
+  .slider-general p {
+    line-height: 30px;
+    padding-right: 26%;
+    font-family: 'poppins', sans-serif;
+    color: var(--color1);
+  }
+  
+  /*text Hover Effect for Portfolio */
+  
+  .text-wrap {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .main-title {
+    -webkit-text-stroke: 1px var(--color1);
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .main-title,
+  .hover-title {
+    transition: .5s cubic-bezier(0.51, 0.57, 0.17, 1);
+  }
+  
+  .hover-title {
+    color: var(--color1);
+    position: absolute;
+    transform: translate3d(0, 100, 0);
+  }
+  
+  .text-wrap:hover .main-title {
+    transform.
+  }  
+  
+  .new-line {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  .social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display the list items horizontally */
+  }
+  
+  .social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+    align-items: center; /* Center the list items vertically */
+  }
+  
+  .social-links li {
+    margin-right: 10px;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    color: #d80e5c;
+    font-size: 14px; /* Adjust the font size */
+    text-align: center; /* Center the text within the links */
+  }
+  
+  .social-links i {
+    font-size: 20px; /* Adjust the size of the icons */
+    color: #d80e5c;
+  }
+  
+ 
+  
+  
+  
